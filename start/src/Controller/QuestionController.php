@@ -12,7 +12,7 @@ class QuestionController extends AbstractController
     /**
      * @Route("/", name="app_homepage")
      */
-    public function homepage(Environment $twigEnvironment)
+    public function homepage(Environment $twigEnvironment): Response
     {
         /*
         // fun example of using the Twig service directly!
@@ -27,7 +27,7 @@ class QuestionController extends AbstractController
     /**
      * @Route("/questions/{slug}", name="app_question_show")
      */
-    public function show($slug)
+    public function show($slug): Response
     {
         $answers = [
             'Make sure your cat is sitting purrrfectly still 🤣',
@@ -35,8 +35,11 @@ class QuestionController extends AbstractController
             'Maybe... try saying the spell backwards?',
         ];
 
+        $questionText = "I've been turned into a cat, any thoughts on how to turn back? While I'm **adorable**, I don't really care for cat food.";
+
         return $this->render('question/show.html.twig', [
             'question' => ucwords(str_replace('-', ' ', $slug)),
+            'questionText' => $questionText,
             'answers' => $answers,
         ]);
     }

@@ -32,13 +32,13 @@ final class MarkdownHelper
         CacheInterface $cache,
         MarkdownParserInterface $markdownParser,
         bool $isDebug,
-        LoggerInterface $markdownLogger
+        LoggerInterface $mdLogger
     ) {
 
         $this->cache = $cache;
         $this->markdownParser = $markdownParser;
         $this->isDebug = $isDebug;
-        $this->logger = $markdownLogger;
+        $this->logger = $mdLogger;
     }
 
     public function parse(string $source): string

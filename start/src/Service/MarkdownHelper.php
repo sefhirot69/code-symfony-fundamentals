@@ -27,13 +27,12 @@ final class MarkdownHelper
     }
 
     public function parse(string $source) : string {
-        $markdownParser = $this->markdownParser;
+
         return  $this->cache->get('markdown_' . md5($source), function () use (
-            $markdownParser,
             $source
         ) {
 
-            return $markdownParser->transformMarkdown($source);
+            return $this->markdownParser->transformMarkdown($source);
         });
     }
 }

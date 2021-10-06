@@ -31,7 +31,10 @@ class QuestionController extends AbstractController
 
     /**
      * @Route("/questions/{slug}", name="app_question_show")
-     * @throws InvalidArgumentException
+     * @param                $slug
+     * @param MarkdownHelper $markdownHelper
+     *
+     * @return Response
      */
     public function show($slug, MarkdownHelper $markdownHelper): Response
     {

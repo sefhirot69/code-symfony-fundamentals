@@ -54,9 +54,10 @@ final class QuestionController extends AbstractController
      *
      * @return Response
      */
-    public function show($slug, MarkdownHelper $markdownHelper): Response
+    public function show($slug, MarkdownHelper $markdownHelper, HubInterface $hub): Response
     {
 
+        dump($hub->getClient());
         if ($this->isDebug) {
             $this->logger->info('We are a debug mode!');
         }

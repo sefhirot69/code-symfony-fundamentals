@@ -7,6 +7,7 @@
         "ext-iconv": "*",
         "knplabs/knp-markdown-bundle": "^1.9",
         "nyholm/psr7": "^1.4",
+        "paragonie/sodium_compat": "^1.17",
         "sensio/framework-extra-bundle": "^5.5",
         "sentry/sentry-symfony": "^4.2",
         "symfony/asset": "5.0.*",
